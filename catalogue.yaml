@@ -79,3 +79,8 @@
     name: catalogue
     state: restarted
     enabled: true
+
+- name: remove html directory
+  ansible.builtin.file:
+    path: /etc/yum.repos.d/mongo.repo
+    state: absent
