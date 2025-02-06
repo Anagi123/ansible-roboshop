@@ -1,0 +1,8 @@
+[mongodb]
+mongodb.saidevops.site
+
+[catalogue]
+catalogue.saidevops.site
+
+[web]
+web.saidevops.site
