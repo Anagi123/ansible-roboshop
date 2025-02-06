@@ -50,7 +50,7 @@
   - name: install dependencies
     ansible.builtin.command: npm install
       args:
-       chdir: app/  
+        chdir: app/  
 
   - name: copy catalogue services
     ansible.builtin.copy:
@@ -58,7 +58,7 @@
       dest: /etc/systemd/system/catalogue.service
 
   - name: daemon reload
-    ansible.builtin.systemd_service:
+    ansible.builtin.systemd:
       daemon_reload: true
 
  - name: copy mongo repo to yum.repos.d
@@ -80,7 +80,3 @@
     state: restarted
     enabled: true
 
-- name: remove html directory
-  ansible.builtin.file:
-    path: /etc/yum.repos.d/mongo.repo
-    state: absent
