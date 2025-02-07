@@ -8,7 +8,7 @@
       state: installed
       disable_gpg_check: yes
   - name: Enable Redis 8.1
-    ansible.builtin.command: yum module enable redis:remi-8.1 -y    
+    ansible.builtin.command: yum module enable redis:remi-8.2 -y    
   - name: Install redis
     ansible.builtin.yum:
      nem: redis
