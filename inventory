@@ -7,7 +7,6 @@ catalogue.saidevops.site
 [web]
 web.saidevops.site
 
-[redis]
-redis.saidevops.site
+
 
 
