@@ -8,10 +8,20 @@
       state: installed
       disable_gpg_check: yes
   
-  # - name: Enable redis 6.2
-  #   ansible.builin.command: yum module enable redis:remi-6.2 -y
+  - name: Enable redis 6.2
+    ansible.builin.command: yum module enable redis:remi-6.2 -y
       
   - name: Install redis
     ansible.builtin.yum:
      nem: redis
      state: installed  
+  - name: allow remote locations to redis
+    ansible.builtin.replace:
+     path: /etc/redis.conf
+     regexp: 127.0.0.1
+     replace: 0.0.0.0
+  - name: start ans enable redis
+    ansible.builtin.service:
+     name: redis
+     state: started
+     ebnabled: yes  
