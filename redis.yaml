@@ -3,12 +3,12 @@
   become: yes
   tasks:
   - name: Install redis repo
-    ansible.builtin.yum:
+    ansible.builtin.yum_repository:
       name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
       state: installed
       disable_gpg_check: yes
   - name: Enable Redis 8.1
-    ansible.builtin.command: yum module enable redis:2.el8.remi    
+    ansible.builtin.command: yum module enable 2.el8.remi    
   - name: Install redis
     ansible.builtin.yum:
      nem: redis
