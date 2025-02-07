@@ -10,3 +10,6 @@ web.saidevops.site
 [redis]
 redis.saidevops.site
 
+[user]
+user.saidevops.site
+
